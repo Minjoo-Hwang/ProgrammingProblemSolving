@@ -1,0 +1,26 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        
+        int length = digits.length;   
+        
+        for(int i = length-1 ; i >= 0 ; i--){
+            digits[i]++;
+            
+            //carry넘기는 경우 아닌 바로 덧셈이 되는 경우는 한번 더하고 바로 반환
+            if(digits[i]<10) 
+                return digits;
+            
+            // digit에 1을 더했을 때 10 이상인 경우 carry 넘겨주고 0만 남는다.
+            else 
+                digits[i] = 0;
+        }
+        
+        //carry를 넘겨준 후 자릿 수가 하나 더 늘어나는 경우 배열 길이를 하나 늘려준다.
+        int[] overDigits = new int[length+1];
+        
+        //자릿수가 늘어나면 첫자리가 1이므로 1을 넣어준다.
+        overDigits[0] = 1;
+        
+        return overDigits;
+    }
+}
