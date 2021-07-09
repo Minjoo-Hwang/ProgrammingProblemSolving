@@ -1,4 +1,4 @@
-package lab2_1;
+package Day2.lab2_1;
 import java.util.*;
 
 public class Main {
