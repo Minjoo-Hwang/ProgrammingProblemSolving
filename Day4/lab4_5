@@ -1,0 +1,29 @@
+/*
+leetcode 342. Power of Four.
+https://leetcode.com/problems/power-of-four/submissions/
+
+4의 제곱승인지를 판별하는 프로그래밍
+*/
+
+class Solution {
+public:
+    bool isPowerOfFour(int n) {
+        cout<<n<<endl;
+        bool flag;
+        
+        if(n>0){
+            
+            while(n%4==0){
+                n = n/4;
+            }
+            
+            if(n == 1)
+                flag = true;
+            else
+                flag = false;
+            
+        }
+        
+        return flag;
+    }
+};
