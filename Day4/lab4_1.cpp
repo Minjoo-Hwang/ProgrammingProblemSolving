@@ -1,3 +1,9 @@
+/* 
+난이도 : 1
+사용자 5명의 점수 4가지를 받고  총 합이 가장 높은 사용자의
+순서와 총 점수를 반환
+*/
+
 #include <iostream>
 using namespace std;
 
