@@ -1,0 +1,29 @@
+/*
+programmers. 하샤드수
+입력의 각자릿수의 숫자를 더해 원래 수를 나눌 수 있으면 하샤드수로 판별하는 프로그래밍
+*/
+
+#include <string>
+#include <vector>
+
+using namespace std;
+
+bool solution(int x) {
+    bool answer = true;
+
+    string strNum = to_string(x);
+
+    int addRes = 0;
+    int intNum[strNum.length()];
+
+    for(int i = 0; i<strNum.length(); i++){
+        intNum[i] = (strNum[i] - '0');
+
+        addRes += intNum[i];
+    }
+
+    if(x%addRes == 0)   answer = true;
+    else answer = false;
+
+    return answer;
+}
