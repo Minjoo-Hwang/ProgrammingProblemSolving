@@ -1,0 +1,34 @@
+/*
+난이도 : 1
+leetcode 258. Add Digits
+https://leetcode.com/problems/add-digits/
+
+숫자의 각 자릿수를 더해 한자리가 될때까지 각 자릿수의 합 구하기
+*/
+
+class Solution {
+public:
+    int addDigits(int num) {
+        string strNum = to_string(num);
+        
+        int addRes = 0;
+        int intNum[strNum.length()];
+
+        for(int i = 0; i<strNum.length(); i++){
+            intNum[i] = (strNum[i] - '0');
+            
+            addRes += intNum[i];
+        }
+        
+        while(addRes >= 10){
+            int mod, rem;
+            
+            mod = addRes/10;
+            rem = addRes%10;
+            
+            addRes = mod + rem;
+        }
+        
+        return addRes;
+    }
+};
