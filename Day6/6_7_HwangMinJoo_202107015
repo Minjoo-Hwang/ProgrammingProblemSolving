@@ -1,0 +1,39 @@
+/*
+난이도 : 3
+
+Leetcode 1047. Remove All Adjacent Duplicates In String
+
+문자열의 연속되며, 중복되는 문자 지우기
+*/
+
+class Solution {
+public:
+    string removeDuplicates(string s) {
+        vector<char> vec;
+        
+        for(int i = 0; i<s.length(); i++){
+            //cout<<s[i]<<endl;
+            
+            if(vec.size() == 0){ //vector에 아무것도 없는 경우 
+                vec.push_back(s[i]);
+            }
+            
+            
+            else if(vec.size()>0 && vec.back()==s[i]){
+                //vector에 마지막에 넣은 문자와 현재 검색하고 있는 문자가 같은 경우 
+                vec.pop_back();
+            }
+            else{ //같지 않은 경우
+                vec.push_back(s[i]);
+            }
+        }
+        
+        string ret;
+        
+        for(int i = 0; i<vec.size(); i++){
+            ret += vec[i];
+        }
+        
+        return ret;
+    }
+};
