@@ -1,0 +1,32 @@
+/*
+난이도 : 2
+LeetCode 206. Reverse Linked List
+*/
+
+/**
+ * 초기 ) prevnode = null, curnode = head
+ * 과정 ) nextnode = curnode -> next, curnode -> next = prev
+ * 종료 ) curnode = nextnode, prevnode = curnode
+ */
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        
+        if(head == NULL) return NULL;
+        
+        ListNode* prevnode = NULL;
+        ListNode* curnode = head;
+        ListNode* nextnode;
+        
+        while(curnode!=NULL){
+            nextnode = curnode -> next;
+            curnode -> next = prevnode;
+            
+            prevnode = curnode;
+            curnode = nextnode;
+        }
+        
+        return prevnode;
+    }
+};
