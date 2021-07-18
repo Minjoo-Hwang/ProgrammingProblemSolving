@@ -4,6 +4,10 @@
 
 문제 설명을 그대로 활용하면 시간 속도를 줄일 수 있다.
 https://www.acmicpc.net/problem/15552
+
+ios::sync_with_stdio(false);
+cin.tie(NULL);
+cout.tie(NULL);
 */
 
 #include <iostream>
