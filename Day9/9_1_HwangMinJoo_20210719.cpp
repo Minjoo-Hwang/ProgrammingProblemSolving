@@ -1,6 +1,7 @@
 /*
 난이도 : 3
 백준 5639. 이진 검색 트리.
+https://www.acmicpc.net/problem/5639
 
 처음 root 를 지정해줄 때, 새로운 node struct를 지정해줘야 한다.
 
