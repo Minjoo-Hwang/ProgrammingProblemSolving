@@ -1,0 +1,27 @@
+/*
+난이도 : 1
+programmers. 2016년.
+
+(b-1) = 1일부터 시작하므로 
+*/
+#include <string>
+#include <vector>
+using namespace std;
+
+string solution(int a, int b) {
+    string answer = "";
+    
+    string day[7] = {"FRI","SAT", "SUN", "MON", "TUE", "WED", "THU"};
+    int month[12] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    
+    int daySum = 0;
+    
+    for(int i = 0; i<a-1; i++){
+        daySum += month[i];
+    }
+    
+    daySum = daySum + b - 1;
+    answer = day[daySum%7];
+    
+    return answer;
+}
